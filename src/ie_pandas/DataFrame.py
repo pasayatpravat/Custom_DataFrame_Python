@@ -96,6 +96,4 @@ class DataFrame:
         for k in self.keys:
             d[k]=numpy.max(self.df[k])
         return d
-		
-	def 
 	
