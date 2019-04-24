@@ -9,6 +9,6 @@ def test_colnames():
 
     expected_output = ["name", "age"]
 
-    actual_output = df1.colnames()
+    actual_output = df1.column_names()
 
     assert actual_output == expected_output
