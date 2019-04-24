@@ -6,7 +6,7 @@ class DataFrame:
         """This is the consuctor of the class that takes a disctionary 'data' as an argument
             and creates a DataFrame with the data."""
 
-        # Check that the input data in of type dictionary
+        # Check that the input data is of type dictionary
         if type(data) != dict:
             raise ValueError("Wrong_Input_Type: Only dictionary is acceptable")
         else:
