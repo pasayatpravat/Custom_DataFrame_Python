@@ -1,3 +1,5 @@
+import numpy as np
+
 class DataFrame:
     def __init__(self, df):
         
@@ -12,7 +14,7 @@ class DataFrame:
 
         #Only letting list and numpy array to be set as values in the dictionary
         for i in df.values():
-            if isinstance(i, (list,numpy.ndarray)):
+            if isinstance(i, (list,np.ndarray)):
                 pass
             else:
                 raise ValueError(
@@ -25,7 +27,7 @@ class DataFrame:
 
         else:
             for i in df.values():
-                if all(isinstance(x, (int, float, str, bool,numpy.int_,numpy.float_,numpy.chararray,numpy.bool_)) for x in i):
+                if all(isinstance(x, (int, float, str, bool,np.int_,np.float_,np.chararray,np.bool_)) for x in i):
                     pass
                 else:
                     raise ValueError(
@@ -50,7 +52,7 @@ class DataFrame:
     
     def __getitem__(self,colname):
         ''' This function returns the values of the called column'''
-        return numpy.array(self.df[colname])
+        return np.array(self.df[colname])
     
     
     def colnames(self):
@@ -73,27 +75,27 @@ class DataFrame:
         ''' This method returns a dictionary including the sum of all columns'''
         d=dict()
         for k in self.keys:
-            d[k]=numpy.sum(self.df[k])
+            d[k]=np.sum(self.df[k])
         return d
     
     def median(self):
         ''' This method returns a dictionary including the median of all columns'''
         d=dict()
         for k in self.keys:
-            d[k]=numpy.median(self.df[k])
+            d[k]=np.median(self.df[k])
         return d
     
     def min(self):
         ''' This method returns a dictionary including the min of all columns'''
         d=dict()
         for k in self.keys:
-            d[k]=numpy.min(self.df[k])
+            d[k]=np.min(self.df[k])
         return d
     
     def max(self):
         ''' This method returns a dictionary including the max of all columns'''
         d=dict()
         for k in self.keys:
-            d[k]=numpy.max(self.df[k])
+            d[k]=np.max(self.df[k])
         return d
 	
