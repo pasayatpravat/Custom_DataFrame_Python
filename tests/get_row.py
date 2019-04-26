@@ -12,10 +12,10 @@ df1 = DataFrame(dict_x)
 def test_get_row(df):
 
 
-    expected_output = [{'name': 'Henry', 'age': 20}]
+    expected_output = [{'name': 'Tom', 'age': 10}]
         
     actual_output = df1.get_rows(0,1)
 
-    asset (actual_output == expected_output)
+    assert (actual_output == expected_output)
     
     
