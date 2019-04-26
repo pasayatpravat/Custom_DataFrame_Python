@@ -1,6 +1,0 @@
-from ie_pandas.DataFrame import DataFrame
-import pytest
-
-dict_x = {"name": ["Tom", "Harry", "Dick", "Jerry"], "age": [10, 20, 30, 40]}
-
-df1 = DataFrame(dict_x)
