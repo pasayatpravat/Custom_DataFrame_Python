@@ -273,3 +273,41 @@ class DataFrame:
             column_names.append(str(key))
         # Return the output
         return column_names
+    
+    #This function will give you the first row of the DataFrame
+
+    def head(df):
+
+        #First we are creating and empty DataFrame
+
+        l = []
+
+        #We create a forloop to collect all the column names that we have in ou dataframe
+
+        for i in df.column_names():
+
+            a = i
+
+            l.append(a)
+
+        #we prnt our list of columns
+
+        print(l)
+
+
+        q = []
+
+        #Another foorloop to extract the first row of out DataFrame
+
+        for i in l:
+
+            a = df[i][0]
+
+            q.append(a)
+
+        #printing our dataframe
+
+
+        print(q)
+
+        #once this function is done, we have the name of the columns with the first row
