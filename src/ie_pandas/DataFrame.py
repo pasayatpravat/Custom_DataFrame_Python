@@ -3,33 +3,50 @@ import numpy as np
 
 class DataFrame:
     def __init__(self, data):
+        
+        
         """This is the consuctor of the class that takes a disctionary 'data' as an argument
             and creates a DataFrame with the data."""
 
         # Check that the input data is of type dictionary
+        
+        
         if type(data) != dict:
             raise ValueError("Wrong_Input_Type: Only dictionary is acceptable")
+        
         else:
+            
             # Create a list that contains the length of dictionary values
+            
             length = []
             for i in data.values():
                 length.append(len(i))
 
+        
         # Only letting list and numpy array to be set as values in the dictionary
+        
+        
         for i in data.values():
+            
             if isinstance(i, (list, np.ndarray)):
                 pass
+            
             else:
                 raise ValueError(
                     "Wrong_Input_Type: Only dictionary of list or Numpy array is acccepted"
                 )
 
+        
         # making sure that all columns are of same length
+        
+        
         if len(set(length)) > 1:
             raise ValueError(
                 "Wrong_Input_Length: Columns with unequal length are not accepted"
             )
+        
         else:
+            
             for i in data.values():
                 if all(
                     isinstance(
