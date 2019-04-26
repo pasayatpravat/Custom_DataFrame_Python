@@ -274,15 +274,15 @@ class DataFrame:
         # Return the output
         return column_names
     
-    #This function will give you the first row of the DataFrame
+    # This function will give you the first row of the DataFrame
 
     def head(df):
 
-        #First we are creating and empty DataFrame
+        # First we are creating and empty DataFrame
 
         l = []
 
-        #We create a forloop to collect all the column names that we have in ou dataframe
+        # We create a forloop to collect all the column names that we have in our DataFrame
 
         for i in df.column_names():
 
@@ -290,14 +290,14 @@ class DataFrame:
 
             l.append(a)
 
-        #we prnt our list of columns
+        # We print our list of columns
 
         print(l)
 
 
         q = []
 
-        #Another foorloop to extract the first row of out DataFrame
+        # Another for loop to extract the first row of out DataFrame
 
         for i in l:
 
@@ -311,3 +311,38 @@ class DataFrame:
         print(q)
 
         #once this function is done, we have the name of the columns with the first row
+        
+        
+        
+        # This function will give you the last row of the DataFrame
+        
+    def tail(df):
+        
+# First weare creating and empty DataFrame
+        
+        l = []
+        
+# We createaforloop to collect all the column names that we have in our DataFrame
+
+        for i in df.column_names():
+            a = i
+            l.append(a)
+
+            # We print our list of columns
+            
+        print(l)
+
+        
+        q = []
+        
+# Anotherforloop to extract the first row of out DataFrame
+
+        for i in l:
+            a = df[i][-1]
+            q.append(a)
+            
+# Printingourdataframe
+
+        print(q)
+
+# Oncethisfunction is done, we have the name of the columns with the last row
