@@ -1,13 +1,13 @@
-NAME:
+NAME: ie_pandas
+
 
 ie_pandas
+
 
 DESCRIPTION:
 
 
-This open source project/package is created specifically for an assignment for the Advanced Python class of the Master in Big data and 
-business analytics at IE University (Madrid). The goal of this open source project is to create a Python library which contains a 
-simplified DataFrame object. 
+This open source project / package is created specifically for an assignment for the Advanced Python class of the Master in Big Aata and Business Analytics at IE School of Human Sciences and Technology (Madrid). The goal of this open source project is to create a Python library which contains a simplified DataFrame object. 
 
 
 Since the assignment requirements stated that our new library could not depend on pandas, dask, array or any other library with a similar functionality, we were only allowed to depend our library on Numpy, which is a highly efficient numerical computing library for Python. 
