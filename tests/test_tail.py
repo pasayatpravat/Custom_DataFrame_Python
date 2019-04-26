@@ -1,3 +1,8 @@
+from ie_pandas.DataFrame import DataFrame
+
+import pytest
+
+
 # Creating a test for the tail() function
 
 def test_tail():
@@ -12,14 +17,14 @@ def test_tail():
     df1 = DataFrame(dict_x)
 
     l = []
-    for i in df.column_names():
+    for i in df1.column_names():
         a = i
         l.append(a)
 
 
     q = []
     for i in l:
-        a = df[i][-1]
+        a = df1[i][-1]
         q.append(a)
 
 
