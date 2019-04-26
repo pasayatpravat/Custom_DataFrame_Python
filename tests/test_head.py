@@ -1,6 +1,11 @@
+from ie_pandas.DataFrame import DataFrame
+
+import pytest
+
+
 #Creating a test for the Head() function
 
-def test_head(df):
+def test_head():
     
     #This is the DataFrame that we are going to use
     
@@ -10,7 +15,7 @@ def test_head(df):
 
     l = []
     
-    for i in df.column_names():
+    for i in df1.column_names():
         
         a = i
         
@@ -21,7 +26,7 @@ def test_head(df):
     
     for i in l:
         
-        a = df[i][0]
+        a = df1[i][0]
         
         q.append(a)
     
