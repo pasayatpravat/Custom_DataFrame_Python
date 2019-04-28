@@ -1,6 +1,5 @@
 NAME: ie_pandas
 
-
 ie_pandas
 
 
@@ -41,51 +40,13 @@ INSTALLATION:
 
 
 
+SUPPORT:
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+For questions about installation or any other remarks, please find below the email adresses of the creators of this library:
+- Pravat Pasayat : 
+- Alberto Lombatti:
+- Alvaro Romero Villa:
+- Camille Chauliac:
 
 
 
