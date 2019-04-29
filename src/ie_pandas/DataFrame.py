@@ -187,9 +187,8 @@ class DataFrame:
         # Iterate over all the columns
         for key in self.keys:
             # Check if the column contains numeric values
-            if all(
-                isinstance(x, (int, float, np.int_, np.float_)) for x in self.data[key]
-            ):
+            if all(isinstance(x, (int, float, np.int_, np.float_))
+                    for x in self.data[key]):
                 sum_dictionary[key] = np.sum(self.data[key])
             else:
                 # If the column contains non-numeric values, ignore it from the
@@ -210,9 +209,8 @@ class DataFrame:
         # Iterate over all the columns
         for key in self.keys:
             # Check if the column contains numeric values
-            if all(
-                isinstance(x, (int, float, np.int_, np.float_)) for x in self.data[key]
-            ):
+            if all(isinstance(x, (int, float, np.int_, np.float_))
+                    for x in self.data[key]):
                 median_dictionary[key] = np.median(self.data[key])
             else:
                 # If the column contains non-numeric values, ignore it from the
@@ -233,9 +231,8 @@ class DataFrame:
         # Iterate over all the columns
         for key in self.keys:
             # Check if the column contains numeric values
-            if all(
-                isinstance(x, (int, float, np.int_, np.float_)) for x in self.data[key]
-            ):
+            if all(isinstance(x, (int, float, np.int_, np.float_))
+                    for x in self.data[key]):
                 min_dictionary[key] = np.min(self.data[key])
             else:
                 # If the column contains non-numeric values, ignore it from the
@@ -256,9 +253,8 @@ class DataFrame:
         # Iterate over all the columns
         for key in self.keys:
             # Check if the column contains numeric values
-            if all(
-                isinstance(x, (int, float, np.int_, np.float_)) for x in self.data[key]
-            ):
+            if all(isinstance(x, (int, float, np.int_, np.float_))
+                    for x in self.data[key]):
                 max_dictionary[key] = np.max(self.data[key])
             else:
                 # If the column contains non-numeric values, ignore it from the
