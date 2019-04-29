@@ -296,7 +296,7 @@ class DataFrame:
 
         # First weare creating and empty DataFrame
 
-        l = []
+        f = []
 
 # We createaforloop to collect all the column names that we have in our
 # DataFrame
@@ -307,7 +307,7 @@ class DataFrame:
 
             # We print our list of columns
 
-        print(l)
+        print(f)
 
         q = []
 
@@ -323,16 +323,16 @@ class DataFrame:
 
 # Oncethisfunction is done, we have the name of the columns with the last row
     def head(df):
-        l = []
+        f = []
         for i in df1.column_names():
             a = i
-            l.append(a)
+            f.append(a)
         q = []
         for i in range(4):
-            for w in l:
+            for w in f:
                 a = df1[w][i]
                 q.append(a)
-            ab = {l[0]: q[0], l[1]: q[1], l[2]: q[2]}
+            ab = {f[0]: q[0], f[1]: q[1], f[2]: q[2]}
             print(ab)
             del q
             q = []
