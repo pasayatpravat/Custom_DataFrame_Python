@@ -30,7 +30,7 @@ class DataFrame:
 
             else:
                 raise ValueError(
-                    "Wrong_Input_Type: Only dictionary" 
+                    "Wrong_Input_Type: Only dictionary"
                     "of list or Numpy array is acccepted"
                 )
 
@@ -38,7 +38,7 @@ class DataFrame:
 
         if len(set(length)) > 1:
             raise ValueError(
-                "Wrong_Input_Length: Columns with" 
+                "Wrong_Input_Length: Columns with"
                 "unequal length are not accepted"
             )
 
