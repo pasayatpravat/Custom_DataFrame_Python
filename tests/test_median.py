@@ -3,7 +3,8 @@ import pytest
 
 
 def test_median():
-    dict_x = {"name": ["Tom", "Harry", "Dick", "Jerry"], "age": [10, 20, 30, 40], "cars": [1, 2, 3, 4]}
+    dict_x = {"name": ["Tom", "Harry", "Dick", "Jerry"], 
+              "age": [10, 20, 30, 40], "cars": [1, 2, 3, 4]}
 
     df1 = DataFrame(dict_x)
 
