@@ -26,16 +26,18 @@ def test_head():
     
     for i in l:
         
-        a = df1[i][0]
-        
-        q.append(a)
+        for w in range(3):
+            
+            a = df1[i][w]
+            
+            q.append(a)
     
     
     expected_output1 = ['name', 'age', 'salary', 'adress']
     
     actual_output1 = l
 
-    expected_output2 = ['Tom', 10, 50, 'a']
+    expected_output2 = ['Tom', 'Harry', 'Dick', 10, 20, 30, 50, 60, 70, 'a', 'b', 'c']
     
     actual_output2 = q
     
