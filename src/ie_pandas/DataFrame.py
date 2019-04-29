@@ -300,10 +300,12 @@ class DataFrame:
         # Another for loop to extract the first row of out DataFrame
 
         for i in l:
-
-            a = df[i][0]
-
-            q.append(a)
+            #With this forloop it will extract the first 3 rows
+            for w in range(3):
+                
+                a = df1[i][w]
+                
+                q.append(a)
 
         #printing our dataframe
 
