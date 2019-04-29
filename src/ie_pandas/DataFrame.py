@@ -311,3 +311,17 @@ class DataFrame:
         print(q)
 
 # Oncethisfunction is done, we have the name of the columns with the last row
+    def head(df):
+        l = []
+        for i in df1.column_names():
+            a = i
+            l.append(a)
+        q = []
+        for i in range(4):
+            for w in l:
+                a = df1[w][i]
+                q.append(a)
+            ab = {l[0]:q[0], l[1]:q[1], l[2]:q[2]}
+            print(ab)
+            del q
+            q = []
