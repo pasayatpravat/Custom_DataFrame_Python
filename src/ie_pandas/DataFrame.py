@@ -3,50 +3,44 @@ import numpy as np
 
 class DataFrame:
     def __init__(self, data):
-        
-        
         """This is the consuctor of the class that takes a disctionary 'data' as an argument
             and creates a DataFrame with the data."""
 
         # Check that the input data is of type dictionary
-        
-        
-        if type(data) != dict:
+
+        if not isinstance(data, dict):
             raise ValueError("Wrong_Input_Type: Only dictionary is acceptable")
-        
+
         else:
-            
+
             # Create a list that contains the length of dictionary values
-            
+
             length = []
             for i in data.values():
                 length.append(len(i))
 
-        
-        # Only letting list and numpy array to be set as values in the dictionary
-        
-        
+        # Only letting list and numpy array to be set as values in the
+        # dictionary
+
         for i in data.values():
-            
+
             if isinstance(i, (list, np.ndarray)):
                 pass
-            
+
             else:
                 raise ValueError(
                     "Wrong_Input_Type: Only dictionary of list or Numpy array is acccepted"
                 )
 
-        
         # making sure that all columns are of same length
-        
-        
+
         if len(set(length)) > 1:
             raise ValueError(
                 "Wrong_Input_Length: Columns with unequal length are not accepted"
             )
-        
+
         else:
-            
+
             for i in data.values():
                 if all(
                     isinstance(
@@ -77,7 +71,8 @@ class DataFrame:
                 class_type.append(type(value))
 
             if len(set(class_type)) > 1:
-                raise ValueError("All the values in a column should be the same")
+                raise ValueError(
+                    "All the values in a column should be the same")
             else:
                 self.data = data
                 self.keys = data.keys()
@@ -103,11 +98,13 @@ class DataFrame:
             and modify/overwrite the column values"""
         # Check if the column is present for the DataFrame
         if column_name in self.keys:
-            # Check if the value we want to set to the column is provided in list format
-            if type(value) == list:
+            # Check if the value we want to set to the column is provided in
+            # list format
+            if isinstance(value, list):
                 # Check if the value is provided for all the rows
                 if len(self.data[column_name]) == len(value):
-                    # Check if all the values provided in the list is one of the permitted datatypes
+                    # Check if all the values provided in the list is one of
+                    # the permitted datatypes
                     if all(
                         isinstance(
                             x,
@@ -127,18 +124,21 @@ class DataFrame:
                         # Set the value for the column
                         self.data[column_name] = value
                     else:
-                        # Throw an error if any value provided in the list doesn't have a permitted datatype
+                        # Throw an error if any value provided in the list
+                        # doesn't have a permitted datatype
                         raise ValueError(
                             "Wrong_Datatype: Only integer, float, boolean and string are accepted"
                         )
 
                 else:
-                    # Throw an error if the value isn't provided for all the rows
+                    # Throw an error if the value isn't provided for all the
+                    # rows
                     raise ValueError(
                         "Wrong_Input_Length: Value should be given for all the rows"
                     )
             else:
-                # Throw an error if the value we want to set to the column isn't provided in list format
+                # Throw an error if the value we want to set to the column
+                # isn't provided in list format
                 raise ValueError("Wrong_Input_Type: Only list is acceptable")
         else:
             # Throw an error if column isn't present for the DataFrame
@@ -152,15 +152,17 @@ class DataFrame:
         # Initialize the result that we have to return
         result_list = []
 
-        # If the user has not given the end index then assume that we have to fetch only the start index
+        # If the user has not given the end index then assume that we have to
+        # fetch only the start index
         if index_end is None:
             index_end = index_start + 1
 
         # Check if the input indexs are integer
-        if type(index_start) == int and type(index_end) == int:
+        if isinstance(index_start, int) and isinstance(index_end, int):
             # Iterate over set of indexes/rows
             for index in range(index_start, index_end):
-                # Initiate a dictionary, where we will store the data belonging to a row
+                # Initiate a dictionary, where we will store the data belonging
+                # to a row
                 row_dictionary = dict()
                 # Iterate over all the columns of a particular row
                 for key in self.keys:
@@ -173,7 +175,8 @@ class DataFrame:
             return result_list
         else:
             # Throw an error saying that only integer indexes are accepted
-            raise ValueError("Wrong_Input_Type: Only integer value is acceptable")
+            raise ValueError(
+                "Wrong_Input_Type: Only integer value is acceptable")
 
     def sum(self):
         """ This method returns a List of dictionary that contains the sum of numeric columns"""
@@ -189,7 +192,8 @@ class DataFrame:
             ):
                 sum_dictionary[key] = np.sum(self.data[key])
             else:
-                # If the column contains non-numeric values, ignore it from the calculation
+                # If the column contains non-numeric values, ignore it from the
+                # calculation
                 pass
 
         # Add the output to a list
@@ -211,7 +215,8 @@ class DataFrame:
             ):
                 median_dictionary[key] = np.median(self.data[key])
             else:
-                # If the column contains non-numeric values, ignore it from the calculation
+                # If the column contains non-numeric values, ignore it from the
+                # calculation
                 pass
 
         # Add the output to a list
@@ -233,7 +238,8 @@ class DataFrame:
             ):
                 min_dictionary[key] = np.min(self.data[key])
             else:
-                # If the column contains non-numeric values, ignore it from the calculation
+                # If the column contains non-numeric values, ignore it from the
+                # calculation
                 pass
 
         # Add the output to a list
@@ -255,7 +261,8 @@ class DataFrame:
             ):
                 max_dictionary[key] = np.max(self.data[key])
             else:
-                # If the column contains non-numeric values, ignore it from the calculation
+                # If the column contains non-numeric values, ignore it from the
+                # calculation
                 pass
 
         # Add the output to a list
@@ -273,7 +280,7 @@ class DataFrame:
             column_names.append(str(key))
         # Return the output
         return column_names
-    
+
     # This function will give you the first row of the DataFrame
 
     def head(df):
@@ -282,7 +289,8 @@ class DataFrame:
 
         l = []
 
-        # We create a forloop to collect all the column names that we have in our DataFrame
+        # We create a forloop to collect all the column names that we have in
+        # our DataFrame
 
         for i in df.column_names():
 
@@ -294,55 +302,52 @@ class DataFrame:
 
         print(l)
 
-
         q = []
 
         # Another for loop to extract the first row of out DataFrame
 
         for i in l:
-            #With this forloop it will extract the first 3 rows
+            # With this forloop it will extract the first 3 rows
             for w in range(3):
-                
+
                 a = df1[i][w]
-                
+
                 q.append(a)
 
-        #printing our dataframe
-
+        # printing our dataframe
 
         print(q)
 
-        #once this function is done, we have the name of the columns with the first row
-        
-        
-        
+        # once this function is done, we have the name of the columns with the
+        # first row
+
         # This function will give you the last row of the DataFrame
-        
+
     def tail(df):
-        
-# First weare creating and empty DataFrame
-        
+
+        # First weare creating and empty DataFrame
+
         l = []
-        
-# We createaforloop to collect all the column names that we have in our DataFrame
+
+# We createaforloop to collect all the column names that we have in our
+# DataFrame
 
         for i in df.column_names():
             a = i
             l.append(a)
 
             # We print our list of columns
-            
+
         print(l)
 
-        
         q = []
-        
+
 # Anotherforloop to extract the first row of out DataFrame
 
         for i in l:
             a = df[i][-1]
             q.append(a)
-            
+
 # Printingourdataframe
 
         print(q)
