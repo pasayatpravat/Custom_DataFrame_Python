@@ -3,7 +3,7 @@ import numpy as np
 
 class DataFrame:
     def __init__(self, data):
-        """This is the consuctor of the class that takes 
+        """This is the consuctor of the class that takes
         a disctionary 'data' as an argument
             and creates a DataFrame with the data."""
 
@@ -95,7 +95,7 @@ class DataFrame:
             )
 
     def __setitem__(self, column_name, value):
-        """ This function takes a string 'column_name' 
+        """ This function takes a string 'column_name'
         and a list 'value' as arguments
             and modify/overwrite the column values"""
         # Check if the column is present for the DataFrame
@@ -154,8 +154,8 @@ class DataFrame:
         # Initialize the result that we have to return
         result_list = []
 
-        # If the user has not given the end 
-        #index then assume that we have to
+        # If the user has not given the end
+        # index then assume that we have to
         # fetch only the start index
         if index_end is None:
             index_end = index_start + 1
@@ -182,7 +182,7 @@ class DataFrame:
                 "Wrong_Input_Type: Only integer value is acceptable")
 
     def sum(self):
-        """ This method returns a List of dictionary 
+        """ This method returns a List of dictionary
         that contains the sum of numeric columns"""
         # Initialize the variables
         sum_list = []
@@ -205,7 +205,7 @@ class DataFrame:
         return sum_list
 
     def median(self):
-        """ This method returns a List of dictionary that 
+        """ This method returns a List of dictionary that
         contains the median of numeric columns"""
         # Initialize the variables
         median_list = []
@@ -228,7 +228,7 @@ class DataFrame:
         return median_list
 
     def min(self):
-        """ This method returns a List of dictionary that 
+        """ This method returns a List of dictionary that
         contains the minimum value of numeric columns"""
         # Initialize the variables
         min_list = []
@@ -251,7 +251,7 @@ class DataFrame:
         return min_list
 
     def max(self):
-        """ This method returns a List of dictionary that 
+        """ This method returns a List of dictionary that
         contains the maximum value of numeric columns"""
         # Initialize the variables
         max_list = []
