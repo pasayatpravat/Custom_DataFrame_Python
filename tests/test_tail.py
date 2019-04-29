@@ -10,9 +10,9 @@ def test_tail():
     # This is the DataFrame that we are going to use
 
     dict_x = {"name": ["Tom", "Harry", "Dick", "Jerry"],
-            "age": [10, 20, 30, 40],
-            "salary":[50, 60, 70, 80],
-            "adress":['a', 'b', 'c', 'd']}
+              "age": [10, 20, 30, 40],
+              "salary": [50, 60, 70, 80],
+              "adress": ['a', 'b', 'c', 'd']}
 
     df1 = DataFrame(dict_x)
 
@@ -21,12 +21,10 @@ def test_tail():
         a = i
         l.append(a)
 
-
     q = []
     for i in l:
         a = df1[i][-1]
         q.append(a)
-
 
     expected_output1 = ['name', 'age', 'salary', 'adress']
 
