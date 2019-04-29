@@ -279,8 +279,6 @@ class DataFrame:
 
     # This function will give you the first row of the DataFrame
 
-    
-
     def tail(df):
 
         # First weare creating and empty DataFrame
@@ -321,7 +319,7 @@ class DataFrame:
             for w in l:
                 a = df1[w][i]
                 q.append(a)
-            ab = {l[0]:q[0], l[1]:q[1], l[2]:q[2]}
+            ab = {l[0]: q[0], l[1]: q[1], l[2]: q[2]}
             print(ab)
             del q
             q = []
