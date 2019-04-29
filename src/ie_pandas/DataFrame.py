@@ -30,14 +30,16 @@ class DataFrame:
 
             else:
                 raise ValueError(
-                    "Wrong_Input_Type: Only dictionary of list or Numpy array is acccepted"
+                    "Wrong_Input_Type: Only dictionary of 
+                    list or Numpy array is acccepted"
                 )
 
         # making sure that all columns are of same length
 
         if len(set(length)) > 1:
             raise ValueError(
-                "Wrong_Input_Length: Columns with unequal length are not accepted"
+                "Wrong_Input_Length: Columns with 
+                unequal length are not accepted"
             )
 
         else:
@@ -62,7 +64,8 @@ class DataFrame:
                     pass
                 else:
                     raise ValueError(
-                        "Wrong_Data_Type: Only integer, float, boolean and string are accepted"
+                        "Wrong_Data_Type: Only integer, 
+                        float, boolean and string are accepted"
                     )
 
         # Making sure that all values in a column are of the same type
@@ -129,14 +132,16 @@ class DataFrame:
                         # Throw an error if any value provided in the list
                         # doesn't have a permitted datatype
                         raise ValueError(
-                            "Wrong_Datatype: Only integer, float, boolean and string are accepted"
+                            "Wrong_Datatype: Only integer, float, 
+                            boolean and string are accepted"
                         )
 
                 else:
                     # Throw an error if the value isn't provided for all the
                     # rows
                     raise ValueError(
-                        "Wrong_Input_Length: Value should be given for all the rows"
+                        "Wrong_Input_Length: Value should 
+                        be given for all the rows"
                     )
             else:
                 # Throw an error if the value we want to set to the column
@@ -149,7 +154,8 @@ class DataFrame:
             )
 
     def get_rows(self, index_start, index_end=None):
-        """ This method takes integer values 'index_start' and 'index_end' as arguments
+        """ This method takes integer values 'index_start'
+        and 'index_end' as arguments
             and returns the specific rows."""
         # Initialize the result that we have to return
         result_list = []
@@ -292,7 +298,8 @@ class DataFrame:
 
         l = []
 
-# We createaforloop to collect all the column names that we have in our
+# We createaforloop to collect all the 
+#column names that we have in our
 # DataFrame
 
         for i in df.column_names():
