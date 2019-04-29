@@ -44,26 +44,6 @@ SUPPORT:
 
 For questions about installation or any other remarks, please find below the email adresses of the creators of this library:
 - Pravat Pasayat : 
-- Alberto Lombatti:
-- Alvaro Romero Villa:
-- Camille Chauliac:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-...
+- Alberto Lombatti:a.lombatti@student.ie.edu
+- Alvaro Romero Villa: aromerovilla@student.ie.edu
+- Camille Chauliac: camille.chauliac@student.ie.edu
