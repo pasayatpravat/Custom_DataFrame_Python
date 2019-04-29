@@ -279,44 +279,21 @@ class DataFrame:
 
     # This function will give you the first row of the DataFrame
 
-    def head(df):
-
-        # First we are creating and empty DataFrame
-
+     def head():
         l = []
-
-        # We create a forloop to collect all the column names that we have in
-        # our DataFrame
-
-        for i in df.column_names():
-
+        for i in df1.column_names():
             a = i
-
             l.append(a)
-
-        # We print our list of columns
-
-        print(l)
-
+       
         q = []
-
-        # Another for loop to extract the first row of out DataFrame
-
-        for i in l:
-            # With this forloop it will extract the first 3 rows
-            for w in range(3):
-
-                a = df1[i][w]
-
+        for i in range(4):
+            for w in l:
+                a = df1[w][i]
                 q.append(a)
-
-        # printing our dataframe
-
-        print(q)
-
-        # once this function is done, we have the name of the columns with the
-        # first row
-
+            ab = {l[0]:q[0], l[1]:q[1], l[2]:q[2]}
+            print(ab)
+            del q
+            q = []
         # This function will give you the last row of the DataFrame
 
     def tail(df):
