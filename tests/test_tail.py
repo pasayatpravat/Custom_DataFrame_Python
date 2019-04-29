@@ -16,19 +16,19 @@ def test_tail():
 
     df1 = DataFrame(dict_x)
 
-    l = []
+    f = []
     for i in df1.column_names():
         a = i
-        l.append(a)
+        f.append(a)
 
     q = []
-    for i in l:
+    for i in f:
         a = df1[i][-1]
         q.append(a)
 
     expected_output1 = ['name', 'age', 'salary', 'adress']
 
-    actual_output1 = l
+    actual_output1 = f
 
     expected_output2 = ['Jerry', 40, 80, 'd']
 
