@@ -10,7 +10,7 @@ def test_median():
 
     df1 = DataFrame(dict_x)
 
-    expected_output = [{“age”: 25, “cars”: 2.5}]
+    expected_output = [{"age": 25, "cars": 2.5}]
 
     actual_output = df1.median()
 

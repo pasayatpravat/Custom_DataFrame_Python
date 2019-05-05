@@ -10,7 +10,7 @@ def test_min():
 
     df1 = DataFrame(dict_x)
 
-    expected_output = [{“age”: 10, “cars”: 1}]
+    expected_output = [{"age": 10, "cars": 1}]
 
     actual_output = df1.min()
 
