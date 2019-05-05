@@ -3,8 +3,7 @@ import pytest
 
 
 def test_colnames():
-    dict_x = {"name": ["Tom", "Harry", "Dick", "Jerry"],
-              "age": [10, 20, 30, 40]}
+    dict_x = {"name": ["Tom", "Harry", "Dick", "Jerry"], "age": [10, 20, 30, 40]}
 
     df1 = DataFrame(dict_x)
 
