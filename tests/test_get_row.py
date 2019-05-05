@@ -50,4 +50,4 @@ def test_get_row_error_scenario_4():
 
     with pytest.raises(ValueError) as excinfo:
         df1.get_rows("0")
-    assert str(excinfo.value) == "Wrong_Input_Type: Only integer value is acceptable
+    assert str(excinfo.value) == "Wrong_Input_Type: Only integer value is acceptable"
