@@ -38,8 +38,7 @@ class DataFrame:
 
         if len(set(length)) > 1:
             raise ValueError(
-                "Wrong_Input_Length: Columns with"
-                "unequal length are not accepted"
+                "Wrong_Input_Length: Columns with" "unequal length are not accepted"
             )
 
         else:
@@ -75,8 +74,7 @@ class DataFrame:
                 class_type.append(type(value))
 
             if len(set(class_type)) > 1:
-                raise ValueError(
-                    "All the values in a column should be the same")
+                raise ValueError("All the values in a column should be the same type")
             else:
                 self.data = data
                 self.keys = data.keys()
@@ -140,8 +138,7 @@ class DataFrame:
                     # Throw an error if the value isn't provided for all the
                     # rows
                     raise ValueError(
-                        "Wrong_Input_Length: Value should be"
-                        "given for all the rows"
+                        "Wrong_Input_Length: Value should be" "given for all the rows"
                     )
             else:
                 # Throw an error if the value we want to set to the column
@@ -160,14 +157,16 @@ class DataFrame:
         # Initialize the result that we have to return
         result_list = []
 
-        # If the user has not given the end
-        # index then assume that we have to
-        # fetch only the start index
-        if index_end is None:
-            index_end = index_start + 1
-
         # Check if the input indexs are integer
-        if isinstance(index_start, int) and isinstance(index_end, int):
+        if isinstance(index_start, int) and (
+            index_end is None or isinstance(index_end, int)
+        ):
+            # If the user has not given the end
+            # index then assume that we have to
+            # fetch only the start index
+            if index_end is None:
+                index_end = index_start + 1
+
             # Iterate over set of indexes/rows
             for index in range(index_start, index_end):
                 # Initiate a dictionary, where we will store the data belonging
@@ -184,8 +183,7 @@ class DataFrame:
             return result_list
         else:
             # Throw an error saying that only integer indexes are accepted
-            raise ValueError(
-                "Wrong_Input_Type: Only integer value is acceptable")
+            raise ValueError("Wrong_Input_Type: Only integer value is acceptable")
 
     def sum(self):
         """ This method returns a List of dictionary
@@ -197,8 +195,9 @@ class DataFrame:
         # Iterate over all the columns
         for key in self.keys:
             # Check if the column contains numeric values
-            if all(isinstance(x, (int, float, np.int_, np.float_))
-                    for x in self.data[key]):
+            if all(
+                isinstance(x, (int, float, np.int_, np.float_)) for x in self.data[key]
+            ):
                 sum_dictionary[key] = np.sum(self.data[key])
             else:
                 # If the column contains non-numeric values, ignore it from the
@@ -220,8 +219,9 @@ class DataFrame:
         # Iterate over all the columns
         for key in self.keys:
             # Check if the column contains numeric values
-            if all(isinstance(x, (int, float, np.int_, np.float_))
-                    for x in self.data[key]):
+            if all(
+                isinstance(x, (int, float, np.int_, np.float_)) for x in self.data[key]
+            ):
                 median_dictionary[key] = np.median(self.data[key])
             else:
                 # If the column contains non-numeric values, ignore it from the
@@ -243,8 +243,9 @@ class DataFrame:
         # Iterate over all the columns
         for key in self.keys:
             # Check if the column contains numeric values
-            if all(isinstance(x, (int, float, np.int_, np.float_))
-                    for x in self.data[key]):
+            if all(
+                isinstance(x, (int, float, np.int_, np.float_)) for x in self.data[key]
+            ):
                 min_dictionary[key] = np.min(self.data[key])
             else:
                 # If the column contains non-numeric values, ignore it from the
@@ -266,8 +267,9 @@ class DataFrame:
         # Iterate over all the columns
         for key in self.keys:
             # Check if the column contains numeric values
-            if all(isinstance(x, (int, float, np.int_, np.float_))
-                    for x in self.data[key]):
+            if all(
+                isinstance(x, (int, float, np.int_, np.float_)) for x in self.data[key]
+            ):
                 max_dictionary[key] = np.max(self.data[key])
             else:
                 # If the column contains non-numeric values, ignore it from the
@@ -289,4 +291,3 @@ class DataFrame:
             column_names.append(str(key))
         # Return the output
         return column_names
-
